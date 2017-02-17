@@ -1,6 +1,9 @@
 ---
-- name: install nginx
-  yum: pkg=nginx state=present
+- include: setup-debian.yml
+  when: ansible_os_family == 'Debian'
+
+- include: setup-redhat.yml
+  when: ansible_os_family == 'RedHat'
 
 - name: make sure nginx is running
   service: name=nginx state=running enabled=yes
