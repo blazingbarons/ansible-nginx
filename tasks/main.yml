@@ -1,0 +1,6 @@
+---
+- name: install nginx
+  yum: pkg=nginx state=present
+
+- name: make sure nginx is running
+  service: name=nginx state=running enabled=yes
