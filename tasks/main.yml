@@ -6,4 +6,4 @@
   when: ansible_os_family == 'RedHat'
 
 - name: make sure nginx is running
-  service: name=nginx state=running enabled=yes
+  service: name=nginx state=started enabled=yes
